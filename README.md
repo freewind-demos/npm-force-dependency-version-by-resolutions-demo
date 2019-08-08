@@ -1,19 +1,27 @@
-Yarn Force Dependency Version by "resolutions" Demo
-===================================================
+Npm Force Dependency Version by "npm-force-resolutions" Demo
+============================================================
 
-在package.json中通过指定`resolutions`来强制使用某个版本。
+在npm中强制使用dependency的某个版本比较麻烦，不像yarn那样内置支持。
 
-注意：只有yarn支持。如果是npm，需要其它的办法。
+在npm中需要使用`npm-force-resolutions`作为辅助，而且做法也非常hacky：
+
+1. 首先使用`npm install`安装，并生成`package-lock.json`
+2. 运行`npx npm-force-resolutions`，修改`package-lock.json`中的相应版本
+3. 删除`node_modules`，再次运行`npm install`会根据package-lock.json重新安装
+
+感觉不是很好，算是没办法的办法。应该先试试更新相关的dependency版本来解决。
 
 ```
-yarn
-yarn run demo
+npm install
+npx npx npm-force-resolutions
+rm -rf node_modules
+npm install
 ```
 
 检查：
 
 ```
-yarn list --depth 10
+npm ls fsevents
 ```
 
-可以看到`fsevents`最终使用的是`1.2.9`版本。
+使用的应该是`1.2.9`版本。
