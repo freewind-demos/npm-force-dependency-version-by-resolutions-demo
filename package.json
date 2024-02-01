@@ -1,14 +1,14 @@
 {
-    "scripts": {
-        "start": "node hello.js"
-    },
-    "dependencies": {
-        "webpack-dev-server": "3.2.1"
-    },
-    "devDependencies": {
-        "npm-force-resolutions": "0.0.2"
-    },
-    "resolutions": {
-        "fsevents": "1.2.9"
-    }
+  "scripts": {
+    "start": "node hello.js"
+  },
+  "dependencies": {
+    "webpack-dev-server": "3.2.1"
+  },
+  "devDependencies": {
+    "npm-force-resolutions": "0.0.2"
+  },
+  "resolutions": {
+    "fsevents": "1.2.9"
+  }
 }
